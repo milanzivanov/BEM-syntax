@@ -42,7 +42,7 @@
     "inuit-responsive-settings": "latest",
     "inuit-responsive-tools": "latest",
     "inuit-shared": "latest",
-    "inuit-spacing": "latest",
+    "inuit-spacing": "~0.6.4",
     "inuit-spacing-responsive": "latest",
     "inuit-tools-widths": "latest",
     "inuit-widths": "~0.3.2",
