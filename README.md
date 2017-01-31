@@ -1,6 +1,8 @@
-# BEM (Block - Element - Modifier) methodology
+# BEM (Block - Element - Modifier) syntax
 
-This is a demonstration of BEM syntax.
+This repo is a small demonstration of BEM syntax.
+
+Check this slides https://goo.gl/ahUL5n
 
 # Installation instructions
 
