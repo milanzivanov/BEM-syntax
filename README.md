@@ -2,11 +2,7 @@
 
 This is a demonstration of BEM syntax.
 
-+ Inuitcss
-+ Jquery
-
-
-# Getting Started with project
+# Installation instructions
 
 Install node.js and node package manager (npm): https://www.npmjs.org/
 
@@ -28,3 +24,6 @@ To build the project, from the project's directory run:
 ```shell
 gulp watch
 ```
+
+For faster work use LiveReload chrome extension
+https://goo.gl/nGPiDJ
