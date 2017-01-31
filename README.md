@@ -1,4 +1,4 @@
-# BEM methodology
+# BEM (Block - Element - Modifier) methodology
 
 This is a demonstration of BEM syntax.
 
