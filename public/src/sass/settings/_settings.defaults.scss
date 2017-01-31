@@ -20,7 +20,7 @@ $second-title-color:                            #ccc;
 $spacing-unit:                                  $base-line-height;
 $spacing-unit--small:                           round($spacing-unit / 2);
 $page-max-width:                                940px;
-
+$inuit-layout-gutter:							$spacing-unit;
 
 // Breakpoints
 $breakpoint-medium:                             481px;
