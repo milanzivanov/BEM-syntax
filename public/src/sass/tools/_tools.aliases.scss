@@ -1,0 +1,6 @@
+// #ALIASES
+
+@mixin font-size($font-size...) {
+    @include inuit-font-size($font-size...);
+}
+

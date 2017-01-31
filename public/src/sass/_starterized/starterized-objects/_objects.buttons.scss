@@ -1,0 +1,39 @@
+/* --------------------------------------------------------------------------------------
++
++ BUTTONS
++
+-------------------------------------------------------------------------------------- */
+
+//DEFAULT BUTTON STYLE
+.#{$starterized-namespace}btn,
+%#{$starterized-namespace}btn {
+    transition: all .2s ease;
+    -moz-user-select: -moz-none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+    background: none;
+    border: none;
+    display: inline-block;
+    line-height: normal;
+    margin: 0;                   /* remove margin for some browsers */
+    padding: 0;                  /* remove padding in Firefox */
+    text-decoration: none;
+    text-shadow: none;
+    vertical-align: middle;
+    white-space: nowrap;
+
+    &:hover {
+        cursor: pointer;
+        text-decoration: none;
+    }
+}
+
+//BUTTON FULL
+.#{$starterized-namespace}btn--full,
+%#{$starterized-namespace}btn--full {
+    box-sizing: border-box;
+    display: block !important;
+    width: 100% !important;             /* force 100% width for <button> */
+}

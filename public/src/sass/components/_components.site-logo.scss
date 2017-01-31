@@ -1,0 +1,18 @@
+/*------------------------------------*\
+    #SITE LOGO
+\*------------------------------------*/
+
+.site-logo {
+    display: inline-block;
+    vertical-align: middle;
+
+    > img {
+        height: auto;
+        vertical-align: middle;
+        width: 181px;
+    }
+
+    &:hover {
+        text-decoration: none;
+    }
+}

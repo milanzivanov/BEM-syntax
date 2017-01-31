@@ -1,0 +1,40 @@
+// DEFAULT SETTINGS
+
+
+// Basic styles
+$base-background-color:                         #fff;
+$base-border-color:                             rgba(#dddcdc, .5);
+$base-border-radius:                            2px;
+$base-font-family:                              'Source Sans Pro', sans-serif;
+$base-font-size:                                16px;
+$base-line-height:                              24px;
+$base-link-color:                               blue;
+$base-selection-background-color:               rgba(#329bdd, .7);
+$base-selection-text-color:                     #fff;
+$base-text-color:                               #000;
+$base-title-color:                              #000;
+$second-title-color:                            #ccc;
+
+
+// Layout
+$spacing-unit:                                  $base-line-height;
+$spacing-unit--small:                           round($spacing-unit / 2);
+$page-max-width:                                940px;
+
+
+// Breakpoints
+$breakpoint-medium:                             481px;
+$breakpoint-large:                              769px;
+$breakpoint-extralarge:                         1025px;
+
+
+// Inuit breakpoints
+$breakpoints: (
+    "medium"           "screen and (min-width: #{$breakpoint-medium}) and (max-width: #{$breakpoint-large - 1})",
+    "medium-and-up"    "screen and (min-width: #{$breakpoint-medium})",
+    "large"           "screen and (min-width: #{$breakpoint-large}) and (max-width: #{$breakpoint-extralarge - 1})",
+    "large-and-up"    "screen and (min-width: #{$breakpoint-large})",
+    "extralarge-and-up"    "screen and (min-width: #{$breakpoint-extralarge})",
+    "retina"        "(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)"
+);
+

@@ -1,0 +1,75 @@
+// ALIASES
+
+// FUNCTIONS
+@function strip-units($number) {
+    @return starterized-strip-units($number);
+}
+
+@function em($number, $base) {
+    @return starterized-em($number, $base);
+}
+
+@function percent($number, $base) {
+    @return starterized-percent($number, $base);
+}
+
+@function rem($number) {
+    @return starterized-rem($number);
+}
+
+// MIXINS
+@mixin invisible {
+    @include starterized-invisible;
+}
+
+@mixin visible {
+    @include starterized-visible;
+}
+
+@mixin selection($selection-background-color, $selection-text-color) {
+    @include starterized-selection($selection-background-color, $selection-text-color);
+}
+
+@mixin unselectable {
+    @include starterized-unselectable;
+}
+
+@mixin break-words {
+    @include starterized-break-words;
+}
+
+@mixin input-placeholder {
+    @include starterized-input-placeholder {
+        @content;
+    }
+}
+
+@mixin font-smoothing($value: on) {
+    @include starterized-font-smoothing($value);
+}
+
+@mixin font-size($font-size) {
+    @include starterized-font-size($font-size);
+}
+
+@mixin screen($res-min, $res-max) {
+    @include starterized-screen($res-min, $res-max) {
+        @content;
+    }
+}
+
+@mixin max-screen($res) {
+    @include starterized-max-screen($res) {
+        @content;
+    }
+}
+
+@mixin min-screen($res) {
+    @include starterized-min-screen($res) {
+        @content;
+    }
+}
+
+@mixin breakpoints($enabled-breakpoints) {
+    @include starterized-breakpoints($enabled-breakpoints);
+}

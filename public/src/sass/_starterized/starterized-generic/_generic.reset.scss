@@ -1,0 +1,55 @@
+/* --------------------------------------------------------------------------------------
++
++ RESET - BUILDS ON TOP OF INUIT NORMALIZE AND RESET
++
+-------------------------------------------------------------------------------------- */
+
+audio,
+canvas,
+img,
+svg,
+video {
+    vertical-align: middle;         /* Remove the gap between images and the bottom of their containers: h5bp.com/i/440 */
+}
+
+table {
+    width: 100%;
+}
+
+//CONTENTEDITABLE
+[contenteditable] {
+    outline: none;
+}
+
+//SETTING FORM ELEMENTS
+input,
+textarea {
+    border-radius: 0;      /* remove input border radius on mobile safari and mobile firefox */
+}
+
+select,
+input,
+textarea,
+button {
+    @include starterized-font-size($starterized-base-font-size);
+    margin: 0;                      /* Address margins set differently in IE 6/7, Firefox 3+, Safari 5, and Chrome */
+
+    //REMOVE WEBKIT OUTLINE
+    &:focus {
+        outline: none;
+    }
+}
+
+textarea {
+    resize: vertical;               /* Allow only vertical resizing of textareas */
+    vertical-align: top;            /* Improve readability and alignment in all browsers */
+}
+
+//ALIGN CHECKBOXES AND RADIOS WITH THEIR LABEL
+input[type="radio"] {
+    vertical-align: text-bottom;
+}
+
+input[type="checkbox"] {
+    vertical-align: bottom;
+}

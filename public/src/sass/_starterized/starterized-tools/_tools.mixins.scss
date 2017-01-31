@@ -1,0 +1,199 @@
+// MIXINS
+
+//INVISIBLE
+@mixin starterized-invisible {
+    opacity: 0;
+    visibility: hidden;
+}
+
+//VISIBLE
+@mixin starterized-visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+//SELECTED TEXT MIXIN
+@mixin starterized-selection($selection-background-color, $selection-text-color) {
+    ::-moz-selection {
+        background: $selection-background-color;
+        color: $selection-text-color;
+        text-shadow: none;
+    }
+    ::selection {
+        background: $selection-background-color;
+        color: $selection-text-color;
+        text-shadow: none;
+    }
+}
+
+// //UNSELECTABLE
+// @mixin starterized-unselectable {
+//     @include user-select(none); /* http://compass-style.org/reference/compass/css3/user_interface/ */
+// }
+
+//WORD BREAK
+@mixin starterized-break-words {
+    @include hyphenation; /* http://compass-style.org/reference/compass/css3/hyphenation/ */
+}
+
+//PLACEHOLDER INPUT
+@mixin starterized-input-placeholder {
+    &::-webkit-input-placeholder {
+        @content;
+    }
+    &:-moz-placeholder {
+        @content;
+    }
+    &::-moz-placeholder {
+        @content;
+    }
+    &:-ms-input-placeholder {
+        @content;
+    }
+}
+
+//FONT SMOOTHING
+@mixin starterized-font-smoothing($value: on) {
+    @if $value == on {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+
+    @else {
+        -webkit-font-smoothing: subpixel-antialiased;
+        -moz-osx-font-smoothing: auto;
+    }
+}
+
+//FONT SIZE IN REM UNIT WITH PIXEL FALLBACK
+//USAGE: @include starterized-font-size(12px) or @include starterized-font-size(12px !important) for buttons for example.
+@mixin starterized-font-size($font-size) {
+    $error: false;
+    $important: null;
+
+    //DO THE LOGIC
+    @if length($font-size) > 2 {
+        $error: true;
+
+        @warn '\a Expecting either one or two arguments for font-size property.\a #{length($font-size)} arguments were passed. \a Value was "#{$font-size}".';
+
+    }
+
+
+    @else if length($font-size) == 2 {
+        $important: nth($font-size, 2);
+
+        @if $important != "!important" {
+            $error: true;
+
+            @warn '\a Expecting "!important" for font-size property.\a Value was "#{$important}".';
+
+        }
+
+        $important: " " + $important;
+
+    }
+
+
+    @if ($error == false) {
+        $font-size: nth($font-size, 1);
+
+        @if unit($font-size) != px {
+
+            @warn '\a Expecting px as unit for font size value.\a Unit was "#{unit($font-size)}".\a Value was "#{$font-size}".';
+
+        }
+
+        @else {
+
+            //SET THE FONT
+            font-size: $font-size#{$important};
+            font-size: starterized-rem($font-size)#{$important};   /* font size for html element MUST be set to 10px for this to work */
+
+        }
+
+    }
+}
+
+//MEDIA QUERIES MIXINS
+//USAGE: @include starterized-screen(320px, 768px) { ... }
+@mixin starterized-screen($res-min, $res-max) {
+    @media screen and (min-width: $res-min) and (max-width: $res-max) {
+        @content;
+    }
+}
+
+//USAGE: @include starterized-max-screen(768px) { ... }
+@mixin starterized-max-screen($res) {
+    @media screen and (max-width: $res) {
+        @content;
+    }
+}
+
+//USAGE: @include starterized-min-screen(320px) { ... }
+@mixin starterized-min-screen($res) {
+    @media screen and (min-width: $res) {
+        @content;
+    }
+}
+
+//************************************************************************//
+// Creates number of css grids described in $enabled-breakpoints argument.
+//
+// @param $enabled-breakpoints {Map} - map with enabled breakpoints
+//************************************************************************//
+
+@mixin starterized-breakpoints($enabled-breakpoints) {
+    @if (type-of($enabled-breakpoints) != 'map') {
+        @warn "No configuration map passed! Since this map is passed by default, something's probably terribly wrong.";
+    }
+
+    // Save breakpoint names in a list, for faster reference.
+    $keys: map-keys($enabled-breakpoints);
+
+    @each $breakpoint-name in $keys {
+        @if (map-get($enabled-breakpoints, $breakpoint-name) == true) {
+            $breakpoint: map-get($starterized-breakpoints, $breakpoint-name);
+            $breakpoint-index: index($keys, $breakpoint-name);
+            $breakpoint-prefix: map-get($breakpoint, 'prefix');
+            $breakpoint-width: map-get($breakpoint, 'width');
+
+            //SET GLOBAL VARIABLE SO WE CAN GET THE BEST OF @content
+            $starterized-current-breakpoint-prefix: $breakpoint-prefix !global;
+
+            @if($breakpoint-index == 1) {
+                // first breakpoint, smallest
+                @include starterized-max-screen($breakpoint-width) {
+                    @content;
+                }
+            } @else if ($breakpoint-index == length($enabled-breakpoints)) {
+                // last breakpoint, largest
+                @include starterized-min-screen($breakpoint-width) {
+                    @content;
+                }
+            } @else {
+                // every other breakpoint, except for 'medium' which is always
+                // scoped within two breakpoints
+
+                // in order to get second argument for screen mixin,
+                // we need to find next breakpoint, in order to find
+                // its width.
+                $next-breakpoint-name: nth($keys, $breakpoint-index + 1);
+
+                 @if ($breakpoint-name == 'medium' or map-get($enabled-breakpoints, $next-breakpoint-name) == true) {
+
+                    @include starterized-screen($breakpoint-width, map-get(map-get($starterized-breakpoints, $next-breakpoint-name), 'width') - 1) {
+                        @content;
+                    }
+                } @else {
+                    @include starterized-min-screen($breakpoint-width) {
+                        @content;
+                    }
+                }
+            }
+
+            //RESET GLOBAL VARIABLE
+            $starterized-current-breakpoint-prefix: null !global;
+        }
+    }
+}

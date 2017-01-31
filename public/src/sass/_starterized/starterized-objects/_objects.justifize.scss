@@ -1,0 +1,54 @@
+/* --------------------------------------------------------------------------------------
++
++ JUSTIFIZE
++
+-------------------------------------------------------------------------------------- */
+
+/*
+    http://www.css-101.org/articles/responsive-boxes/magic-boxes.php
+
+    <div class="justifize">
+      <div class="justifize__box">
+        justifize box content
+      </div>
+      <div class="justifize__box">
+        justifize box content
+      </div>
+      <div class="justifize__box">
+        justifize box content
+      </div>
+    </div>
+*/
+
+//JUSTIFIZE
+.#{$starterized-namespace}justifize,
+%#{$starterized-namespace}justifize {
+    font-size: 1px;     /* IE 9, 10, 11 FIX */
+    text-align: justify;
+
+    &:after {
+        content: "";
+        display: inline-block;
+        width: 100%;
+    }
+}
+
+//JUSTIFIZE BOX
+.#{$starterized-namespace}justifize__box,
+%#{$starterized-namespace}justifize__box {
+    @include starterized-font-size($base-font-size);
+    display: inline-block;
+    text-align: left;
+    vertical-align: middle;
+
+    //GENERAL VERTICAL ALIGNMENT FOR JUSTIFIZE BOX
+    .#{$starterized-namespace}justifize--top &,
+    %#{$starterized-namespace}justifize--top & {
+        vertical-align: top;
+    }
+
+    .#{$starterized-namespace}justifize--bottom &,
+    %#{$starterized-namespace}justifize--bottom & {
+        vertical-align: bottom;
+    }
+}

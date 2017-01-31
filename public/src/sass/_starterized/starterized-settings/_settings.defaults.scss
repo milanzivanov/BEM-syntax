@@ -1,0 +1,31 @@
+/* --------------------------------------------------------------------------------------
++
++ STARTERIZED DEFAULT SETTINGS
++
+-------------------------------------------------------------------------------------- */
+
+
+// COMPASS CONFIG VARIABLES
+$experimental-support-for-svg:                  true !default;          // turns on gradient support for IE9
+$experimental-support-for-opera:                false !default;
+$legacy-support-for-ie6:                        false !default;
+$legacy-support-for-mozilla:                    false !default;         // turns off support for Mozilla prior to version 3.6 http://tiny.cc/42k3mw
+
+
+// BASIC STYLES
+$starterized-base-background-color:             #fff !default;
+$starterized-base-font-size:                    16px !default;
+$starterized-base-line-height:                  24px !default;
+$starterized-base-link-color:                   #0091d4 !default;
+$starterized-base-text-color:                   #333 !default;
+
+
+// STARTERIZED NAMESPACE
+$starterized-namespace:                         null !default;
+
+
+// STARTERIZED BASE SPACING UNIT
+// These variables are framework variables, sourced from variables defined
+// above. Feel free to use these variables throughout your project, but do not
+// modify or reassign them.
+$starterized-base-spacing-unit:                 $starterized-base-line-height;

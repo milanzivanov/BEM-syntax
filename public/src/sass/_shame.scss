@@ -1,0 +1,77 @@
+/*------------------------------------*\
+    #SHAME
+\*------------------------------------*/
+
+.is-invisible {
+    transition: all .1s ease;
+    opacity: 0 !important;
+    visibility: hidden !important;
+}
+
+/**
+ * Completely remove from the flow but leave available to screen readers and
+ * keyboard users (if input is visually hidden).
+ * http://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+ */
+.is-visually-hidden,
+%is-visually-hidden {
+    border: 0 !important;
+    clip: rect(1px, 1px, 1px, 1px) !important;
+    height: 1px !important;
+    overflow: hidden !important;
+    padding: 0 !important;
+    width: 1px !important;
+    position: absolute !important;
+}
+
+.is-hidden {
+    display: none !important;
+}
+
+.inline-block {
+    display: inline-block !important;
+}
+
+//NO SCROLL (PREVENTS SCROLL. NEDDED FOR SOME JQUERY FUNCTIONS)
+.is-not-scroll {
+    overflow: hidden !important;
+}
+
+//SCROLL
+.is-scrollable {
+    overflow: auto !important;
+}
+
+.is-scrollable-visible {
+  overflow: visible !important;
+}
+
+//SCROLL Y
+.is-scrollable-y {
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
+}
+
+//SCROLL X
+.is-scrollable-x {
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+}
+
+
+/**
+ * Flag fix.
+ */
+.#{$inuit-flag-namespace}flag--fix,
+%#{$inuit-flag-namespace}flag--fix {
+
+    .#{$inuit-flag-namespace}flag__img,
+    %#{$inuit-flag-namespace}flag__img {
+        width: 1px;
+    }
+
+    .#{$inuit-flag-namespace}flag__body,
+    %#{$inuit-flag-namespace}flag__body {
+        width: auto;
+    }
+}

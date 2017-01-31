@@ -1,0 +1,94 @@
+// INUIT SETTINGS
+
+// Inuit defaults
+$inuit-base-background-color:                       $base-background-color;
+$inuit-base-font-size:                              $base-font-size;
+$inuit-base-line-height:                            $base-line-height;
+$inuit-base-text-color:                             $base-text-color;
+
+
+// Spacings
+$inuit-enable-margins:                              true;
+$inuit-enable-margins--tiny:                        true;
+$inuit-enable-margins--small:                       true;
+$inuit-enable-margins--large:                       true;
+$inuit-enable-margins--huge:                        true;
+
+
+$inuit-enable-margins--negative:                    true;
+$inuit-enable-margins--negative-tiny:               false;
+$inuit-enable-margins--negative-small:              false;
+$inuit-enable-margins--negative-large:              true;
+$inuit-enable-margins--negative-huge:               false;
+
+$inuit-enable-margins--none:                        true;
+
+$inuit-enable-paddings:                             true;
+$inuit-enable-paddings--tiny:                       true;
+$inuit-enable-paddings--small:                      true;
+$inuit-enable-paddings--large:                      true;
+$inuit-enable-paddings--huge:                       true;
+
+$inuit-enable-paddings--none:                       true;
+
+
+// Responsive spacings
+$inuit-enable-responsive-margins:                   true;
+$inuit-enable-responsive-margins--tiny:             true;
+$inuit-enable-responsive-margins--small:            true;
+$inuit-enable-responsive-margins--large:            true;
+$inuit-enable-responsive-margins--huge:             true;
+
+$inuit-enable-responsive-margins--negative:         false;
+$inuit-enable-responsive-margins--negative-tiny:    false;
+$inuit-enable-responsive-margins--negative-small:   false;
+$inuit-enable-responsive-margins--negative-large:   false;
+$inuit-enable-responsive-margins--negative-huge:    false;
+
+$inuit-enable-responsive-margins--none:             true;
+
+$inuit-enable-responsive-paddings:                  true;
+$inuit-enable-responsive-paddings--tiny:            true;
+$inuit-enable-responsive-paddings--small:           true;
+$inuit-enable-responsive-paddings--large:           true;
+$inuit-enable-responsive-paddings--huge:            true;
+
+$inuit-enable-responsive-paddings--none:            true;
+
+
+// Flag
+$inuit-enable-flag--tiny:                           true;
+$inuit-enable-flag--small:                          true;
+$inuit-enable-flag--large:                          true;
+$inuit-enable-flag--huge:                           true;
+$inuit-enable-flag--rev:                            true;
+$inuit-enable-flag--flush:                          true;
+$inuit-enable-flag--top:                            true;
+$inuit-enable-flag--bottom:                         true;
+$inuit-enable-flag--responsive:                     true;
+$inuit-flag-collapse-at:                            720px;
+
+
+// Layout
+$inuit-enable-layout--tiny:                         true;
+$inuit-enable-layout--small:                        true;
+$inuit-enable-layout--large:                        true;
+$inuit-enable-layout--huge:                         true;
+$inuit-enable-layout--flush:                        true;
+$inuit-enable-layout--rev:                          true;
+$inuit-enable-layout--middle:                       true;
+$inuit-enable-layout--bottom:                       true;
+$inuit-enable-layout--right:                        true;
+$inuit-enable-layout--center:                       true;
+$inuit-enable-layout--auto:                         true;
+
+//Pack
+$inuit-enable-pack--rev: 							true;
+$inuit-enable-pack--middle:                         true;
+
+// Inline list
+$inuit-enable-list-inline--delimited:               true;
+
+
+// Paragraphs
+$inuit-lede-size:                                   1.3;

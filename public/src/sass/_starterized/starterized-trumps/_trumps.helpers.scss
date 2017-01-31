@@ -1,0 +1,82 @@
+// HELPER CLASSES
+
+//IMAGE REPLACEMENT
+%img-replace {
+    display: block;
+    overflow: hidden;
+    text-indent: -9999px;
+    white-space: nowrap;
+}
+
+//HIDING CLASSES
+
+//Hide for both screenreaders and browsers
+.hidden {
+    display: none !important;
+}
+
+//Hide only visually, but have it available for screenreaders
+.visuallyhidden {
+    position: absolute;
+    left: -999em;
+}
+
+
+//Hide visually and from screenreaders, but maintain layout
+.invisible {
+    visibility: hidden !important;
+}
+
+//NO TRANSITION CLASS
+.no-transition {
+    &,
+    * {
+        -webkit-transition: none !important;
+        -moz-transition: none !important;
+        -ms-transition: none !important;
+        transition: none !important;
+    }
+}
+
+//NICER AMPERSAND
+.amp {
+    font-family: Baskerville, Palatino, "Palatino Linotype", "Book Antiqua", serif;
+    font-size: 1.4em;
+    font-style: italic;
+    font-weight: normal;
+}
+
+//QUICK FLOATING
+.float-left {
+    float: left !important;
+}
+
+.float-right {
+    float: right !important;
+}
+
+//QUICK VERTICAL ALIGNMENT
+.align-top {
+    vertical-align: top !important;
+}
+
+.align-middle {
+    vertical-align: middle !important;
+}
+
+.align-bottom {
+    vertical-align: bottom !important;
+}
+
+//QUICK TEXT ALIGNING
+.text-center {
+    text-align: center !important;
+}
+
+.text-left {
+    text-align: left !important;
+}
+
+.text-right {
+    text-align: right !important;
+}

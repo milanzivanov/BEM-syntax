@@ -1,0 +1,61 @@
+/*------------------------------------*\
+    #GENERIC-RESPONSIVE
+\*------------------------------------*/
+
+/**
+ * Generate custom classes for diferent screen sizes
+ */
+
+
+// Internally used mixin to quickly generate our different variants based upon
+// the breakpoints defined in `settings.responsive`.
+
+@mixin inuit-generate-spacing() {
+
+    // Loop through our previously-defined breakpoints.
+    @each $breakpoint in $breakpoints {
+
+        $inuit-generate-spacing-alias:      nth($breakpoint, 1) !global;
+        $inuit-generate-spacing-condition:  nth($breakpoint, 2);
+
+        // This isn’t ideal, but we definitely don’t want to generate widths
+        // for retina devices. Exclude retina media-qeuries manually.
+        @if ($inuit-generate-spacing-alias != "retina") {
+
+            @include media-query($inuit-generate-spacing-alias) {
+                @content;
+            } // Close media query.
+
+        } // Close retina check.
+
+        // Take the global variable back out of scope.
+        $inuit-generate-spacing-alias: null !global;
+
+    } // Close breakpoints loop.
+
+}
+
+
+    @include inuit-generate-spacing() {
+
+        /*
+         * Generic responsive classes for text alignment
+         */
+
+        .#{$inuit-spacing-namespace}text-left-#{$inuit-generate-spacing-alias}      { text-align: left !important; }
+
+        .#{$inuit-spacing-namespace}text-center-#{$inuit-generate-spacing-alias}        { text-align: center !important; }
+
+        .#{$inuit-spacing-namespace}text-right-#{$inuit-generate-spacing-alias}        { text-align: right !important; }
+
+        .#{$inuit-spacing-namespace}none-#{$inuit-generate-spacing-alias}        { display: none !important; }
+
+        .#{$inuit-spacing-namespace}float-none-#{$inuit-generate-spacing-alias}        { float: none !important; }
+
+        .#{$inuit-spacing-namespace}float-left-#{$inuit-generate-spacing-alias}        { float: left !important; }
+
+        .#{$inuit-spacing-namespace}float-right-#{$inuit-generate-spacing-alias}        { float: right !important; }
+
+
+
+    }

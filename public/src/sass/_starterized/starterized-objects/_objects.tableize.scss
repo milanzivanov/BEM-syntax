@@ -1,0 +1,183 @@
+/*------------------------------------*\
+    #TABLEIZE
+\*------------------------------------*/
+
+/**
+ * The `.tableize__content` serves as container for cell content. If you need
+ * width or padding set on a cell, make sure you set it to `.tableize__content`
+ * instead since that is what makes the whole thing work. That being said
+ * `.tableize__content` is optional.
+
+   <div class="tableize">
+     <div class="tableize__cell">
+       <div class="tableize__content">
+         cell content
+       </div>
+     </div>
+     <div class="tableize__cell">
+       <div class="tableize__content">
+         cell content
+       </div>
+     </div>
+   </div>
+ */
+
+// Predefine the variables below in order to alter and enable specific features.
+$starterized-tableize-namespace:                $starterized-namespace !default;
+
+$starterized-enable-tableize--middle:           false !default;
+$starterized-enable-tableize--bottom:           false !default;
+$starterized-enable-tableize--fixed:            false !default;
+$starterized-enable-tableize--full:             false !default;
+
+$starterized-enable-tableize-row:               false !default;
+
+
+
+
+
+.#{$starterized-tableize-namespace}tableize,
+%#{$starterized-tableize-namespace}tableize {
+    display: table;
+    width: 100%;
+}
+
+    /**
+     * Tableize cell.
+     */
+    .#{$starterized-tableize-namespace}tableize__cell,
+    %#{$starterized-tableize-namespace}tableize__cell {
+        display: table-cell;
+        vertical-align: top;
+    }
+
+    /**
+     * Filler cell. There is no need for using this class if parent `.tableize`
+     * has `.tableize--fixed` modifier.
+     *
+     * 1. Fills the rest of the row when one or more cells have fixed width.
+     */
+    .#{$starterized-tableize-namespace}tableize__cell--fill,
+    %#{$starterized-tableize-namespace}tableize__cell--fill {
+        width: 100%; /* [1] */
+    }
+
+
+
+
+
+@if ($starterized-enable-tableize--middle == true) {
+
+    /**
+     * Middle tableize aligns tableize cell to their middles.
+     */
+
+    .#{$starterized-tableize-namespace}tableize--middle,
+    %#{$starterized-tableize-namespace}tableize--middle {
+
+        > .#{$starterized-tableize-namespace}tableize__cell,
+        > %#{$starterized-tableize-namespace}tableize__cell {
+            vertical-align: middle;
+        }
+
+    }
+
+}
+
+
+
+
+
+@if ($starterized-enable-tableize--bottom == true) {
+
+    /**
+     * Bottom tableize aligns tableize cell to their bottom.
+     */
+
+    .#{$starterized-tableize-namespace}tableize--bottom,
+    %#{$starterized-tableize-namespace}tableize--bottom {
+
+        > .#{$starterized-tableize-namespace}tableize__cell,
+        > %#{$starterized-tableize-namespace}tableize__cell {
+            vertical-align: bottom;
+        }
+
+    }
+
+}
+
+
+
+
+
+@if ($starterized-enable-tableize--fixed == true) {
+
+    /**
+     * Fixed tableize makes:
+     * - all cells occupy equal width or
+     * - if one (or more) cells are fixed (or percentage base) width
+     *   the remaining columns will occupy rest of the available space.
+     *
+     * More info about `table-layout: fixed;` at
+     * http://css-tricks.com/fixing-tables-long-strings/
+     */
+
+    .#{$starterized-tableize-namespace}tableize--fixed,
+    %#{$starterized-tableize-namespace}tableize--fixed {
+        table-layout: fixed;
+    }
+
+}
+
+
+
+
+
+@if ($starterized-enable-tableize--full == true) {
+
+    /**
+     * Full height tableize.
+     */
+
+    .#{$starterized-tableize-namespace}tableize--full,
+    %#{$starterized-tableize-namespace}tableize--full {
+        height: 100%;
+
+        > .#{$starterized-tableize-namespace}tableize__cell,
+        > %#{$starterized-tableize-namespace}tableize__cell {
+
+            &,
+            > .#{$starterized-tableize-namespace}tableize__content,
+            > %#{$starterized-tableize-namespace}tableize__content {
+                height: inherit;
+            }
+
+        }
+
+    }
+
+}
+
+
+
+
+
+    @if ($starterized-enable-tableize-row == true) {
+
+        /**
+         * Tableize row is needed for sticky header/footer (as per
+         * http://tiny.cc/4fqdzw).
+         */
+
+        .#{$starterized-tableize-namespace}tableize__row,
+        %#{$starterized-tableize-namespace}tableize__row {
+            display: table-row;
+            height: 1px;
+        }
+
+        .#{$starterized-tableize-namespace}tableize__row--flexible,
+        %#{$starterized-tableize-namespace}tableize__row--flexible {
+            height: auto;
+        }
+
+    }

@@ -1,0 +1,56 @@
+/*------------------------------------*\
+    #PRIMARY BUTTON
+\*------------------------------------*/
+
+$btn-primary-height:                        53px;
+
+
+/**
+ * Primary button.
+ */
+.btn--primary,
+%btn--primary {
+    -webkit-font-smoothing: inherit;
+    transition: all .2s ease;
+    background-color: transparent;
+    border-radius: 0;
+    color: #000;
+    font-weight: 700;
+    height: $btn-primary-height;
+    line-height: $btn-primary-height;
+    width: auto;
+    padding: 0 20px;
+    text-align: center;
+    font-size: 16px;
+    text-transform: uppercase;
+    font-family: $base-font-family;
+    box-sizing: border-box;
+
+    /**
+     * @hover
+     */
+    &:not(:disabled) {
+        &:hover,
+        &:focus {
+
+        }
+    }
+
+    /**
+     * @active
+     */
+    &:not(:disabled) {
+        &:active {
+
+        }
+    }
+
+    /**
+     * @disabled
+     */
+    &:disabled {
+        opacity: 0.5;
+        cursor: not-allowed !important;
+    }
+
+}

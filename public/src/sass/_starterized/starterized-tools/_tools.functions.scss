@@ -1,0 +1,118 @@
+// FUNCTIONS
+
+//STRIP UNITS
+//EXAMPLE: starterized-strip-units(1.2em) will return 1.2
+@function starterized-strip-units($number) {
+    @return $number / ($number * 0 + 1);
+}
+
+//CONVERT PIXEL TO EM KNOWING BASE SIZE IN PIXELS
+@function starterized-em($number, $base) {
+    @return ($number / $base) * 1em;
+}
+
+//CONVERT PIXEL TO PERCENTAGE KNOWING BASE SIZE IN PIXELS
+@function starterized-percent($number, $base) {
+    @return ($number / $base) * 100%;
+}
+
+//CONVERT PIXEL TO REM
+//USAGE: font-size: starterized-rem(12px);
+@function starterized-rem($number) {
+    @return ($number / $starterized-base-font-size) * 1rem;
+}
+
+
+/* --------------------------------------------------------------------------------------
++
++ EASING FUNCTIONS
++
+-------------------------------------------------------------------------------------- */
+
+//SINE
+@function ease-in-sine() {
+    @return cubic-bezier(0.470, 0.000, 0.745, 0.715);
+}
+@function ease-out-sine() {
+    @return cubic-bezier(0.390, 0.575, 0.565, 1.000);
+}
+@function ease-in-out-sine() {
+    @return cubic-bezier(0.445, 0.050, 0.550, 0.950);
+}
+
+//QUAD
+@function ease-in-quad() {
+    @return cubic-bezier(0.550, 0.085, 0.680, 0.530);
+}
+@function ease-out-quad() {
+    @return cubic-bezier(0.250, 0.460, 0.450, 0.940);
+}
+@function ease-in-out-quad() {
+    @return cubic-bezier(0.455, 0.030, 0.515, 0.955);
+}
+
+//CUBIC
+@function ease-in-cubic() {
+    @return cubic-bezier(0.550, 0.055, 0.675, 0.190);
+}
+@function ease-out-cubic() {
+    @return cubic-bezier(0.215, 0.610, 0.355, 1.000);
+}
+@function ease-in-out-cubic() {
+    @return cubic-bezier(0.645, 0.045, 0.355, 1.000);
+}
+
+//QUART
+@function ease-in-quart() {
+    @return cubic-bezier(0.895, 0.030, 0.685, 0.220);
+}
+@function ease-out-quart() {
+    @return cubic-bezier(0.165, 0.840, 0.440, 1.000);
+}
+@function ease-in-out-quart() {
+    @return cubic-bezier(0.770, 0.000, 0.175, 1.000);
+}
+
+//QUINT
+@function ease-in-quint() {
+    @return cubic-bezier(0.755, 0.050, 0.855, 0.060);
+}
+@function ease-out-quint() {
+    @return cubic-bezier(0.230, 1.000, 0.320, 1.000);
+}
+@function ease-in-out-quint() {
+    @return cubic-bezier(0.860, 0.000, 0.070, 1.000);
+}
+
+//EXPO
+@function ease-in-expo() {
+    @return cubic-bezier(0.950, 0.050, 0.795, 0.035);
+}
+@function ease-out-expo() {
+    @return cubic-bezier(0.190, 1.000, 0.220, 1.000);
+}
+@function ease-in-out-expo() {
+    @return cubic-bezier(1.000, 0.000, 0.000, 1.000);
+}
+
+//CIRC
+@function ease-in-circ() {
+    @return cubic-bezier(0.600, 0.040, 0.980, 0.335);
+}
+@function ease-out-circ() {
+    @return cubic-bezier(0.075, 0.820, 0.165, 1.000);
+}
+@function ease-in-out-circ() {
+    @return cubic-bezier(0.785, 0.135, 0.150, 0.860);
+}
+
+//BACK
+@function ease-in-back() {
+    @return cubic-bezier(0.600, -0.280, 0.735, 0.045);
+}
+@function ease-out-back() {
+    @return cubic-bezier(0.175, 0.885, 0.320, 1.275);
+}
+@function ease-in-out-back() {
+    @return cubic-bezier(0.680, -0.550, 0.265, 1.550);
+}

@@ -1,0 +1,9 @@
+.DS_Store
+.sass-cache
+npm-debug*
+node_modules
+bower_components
+css
+build
+resources
+nbproject

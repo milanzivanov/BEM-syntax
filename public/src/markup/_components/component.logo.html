@@ -1,0 +1,5 @@
+{% macro logo(url, alt, classModifier, href) %}
+  <a class="site-logo {{ classModifier }}" href="{{ href }}">
+    <img alt="{{ alt }}" src="{{ url }}">
+  </a>
+{% endmacro %}

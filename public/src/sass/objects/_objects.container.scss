@@ -1,0 +1,16 @@
+/*------------------------------------*\
+    #CONTAINER
+\*------------------------------------*/
+
+.container {
+    margin: 0 auto;
+    max-width: $page-max-width + ($spacing-unit * 2);
+    padding-left:  $spacing-unit;
+    padding-right: $spacing-unit;
+
+    @include max-screen($breakpoint-medium - 1) {
+	    max-width: $page-max-width + ($spacing-unit);
+	    padding-left:  $spacing-unit/2;
+	    padding-right: $spacing-unit/2;
+    }
+}

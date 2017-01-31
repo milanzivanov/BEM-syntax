@@ -1,0 +1,16 @@
+{% extends "./_templates/template.styleguide.html" %}
+{%- set styleguide = true %}
+{% set title = "Styleguide page" %}
+
+{% block content %}
+  {% include "./_partials/partial.header.html" %}
+  <div class="styleguide-container pv+ ph">
+    <h1 class="mb">Project name</h1>
+
+    <div class="styleguide-block">
+      <h2 id="logo" class="mb"><a href="#logo">Logo</a></h2>
+    </div>
+
+  </div>
+  {% include "./_partials/partial.footer.html" %}
+{% endblock %}
