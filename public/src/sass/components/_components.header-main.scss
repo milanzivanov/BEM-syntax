@@ -3,5 +3,61 @@
 \*------------------------------------*/
 
 .header-main {
+	background-color: yellow;
+	// position: fixed;
+	width: 100%;
+	left: 0;
+	top: 0;
 
+	&__logo {
+		float: left;
+		width: 200px;
+	}
+	
+	&--hidden {
+		visibility: hidden;
+	}
+
+	.header-main--bottom {
+		top: auto;
+		bottom: 0;
+	}
 }
+
+
+	.header-main--green {
+		background-color: green;
+	}
+
+	.header-main--blue {
+		background-color: blue;
+	}
+
+
+
+/*------------------------------------*\
+    #NAV MAIN
+\*------------------------------------*/
+
+.nav-main {
+	float: right;
+
+	ul {
+
+	}
+}
+	.nav-main__list {
+
+	}
+
+	.nav-main__item {
+		display: inline-block;
+
+		a {
+			color: black;
+
+			.header-main--blue & {
+				color: white;
+			}
+		}
+	}
