@@ -1,0 +1,20 @@
+{% extends "./_templates/template.default.html" %}
+{% set title = "About" %}
+{% set page = "homepage" %}
+{% set bodyClass = "full-height" %}
+
+{% block content %}
+  <main class="full-height">
+  {% include "_partials/partial.header.html" %}
+
+  	<div class="tableize tableize--full tableize--middle">
+  		<div class="tableize__cell">
+	  		<div class="container">
+	  			<h1>Lorem ipsum dolor sit amet.</h1>
+	  			<img src="https://placeholdit.imgix.net/~text?txtsize=38&txt=Logo&w=650&h=650&txttrack=0" alt="" />
+	  		</div>
+  		</div>
+  	</div>
+  </main>
+  {% include "_partials/partial.footer.html" %}
+{% endblock %}

@@ -3,11 +3,12 @@
 \*------------------------------------*/
 
 .header-main {
-	background-color: yellow;
-	// position: fixed;
+	background-color: #ccc;
+	position: fixed;
 	width: 100%;
 	left: 0;
 	top: 0;
+	z-index: 10;
 
 	&__logo {
 		float: left;
@@ -17,13 +18,12 @@
 	&--hidden {
 		visibility: hidden;
 	}
+}
 
 	.header-main--bottom {
 		top: auto;
 		bottom: 0;
 	}
-}
-
 
 	.header-main--green {
 		background-color: green;
@@ -47,7 +47,9 @@
 	}
 }
 	.nav-main__list {
-
+		margin-left: 0;
+		margin-bottom: 0;
+		margin-right: 20px;
 	}
 
 	.nav-main__item {
@@ -55,6 +57,10 @@
 
 		a {
 			color: black;
+			display: block;
+			line-height: 85px;
+			height: 85px;
+			padding: 0 10px;
 
 			.header-main--blue & {
 				color: white;

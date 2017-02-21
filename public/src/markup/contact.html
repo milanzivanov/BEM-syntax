@@ -1,0 +1,19 @@
+{% extends "./_templates/template.default.html" %}
+{% set title = "About" %}
+{% set page = "homepage" %}
+
+{% block content %}
+  {% include "_partials/partial.header.html" %}
+  <main>
+	  	<div class="container pt+">
+	  		<h1>Layout object</h1>
+	  		<div class="layout">
+	  			<div class="layout__item 1/4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae minima sed, corporis quae? Incidunt dicta nam assumenda libero possimus fugit quidem nesciunt corrupti itaque, tempore nulla asperiores a illo voluptatibus.</div><!-- end of .layout__item -->
+	  			<div class="layout__item 1/4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae minima sed, corporis quae? Incidunt dicta na</div><!-- end of .layout__item -->
+	  			<div class="layout__item 1/4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae minima sed, corporis quae? Incidunt dicta nam assumenda libero possimus fugit quidem nesciunt corrupti itaque, tempore nulla asperiores a illo voluptatibuslestiae minima sed, corporis quae? Incidunt dicta nam assumenda libero possimus fugit quidem nesciunt corrupti itaque, tempore nulla asperiores a illo voluptatibus.</div><!-- end of .layout__item -->
+	  			<div class="layout__item 1/4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae minima sed, corporis quae? Incidunt dicta nam assumenda libero possimus fugit quidem nesciunt corrupti itaque, tempore nulla asperiores a illo voluptatibus.</div><!-- end of .layout__item -->
+	  		</div><!-- end of .layout -->
+	  	</div>
+  </main>
+  {% include "_partials/partial.footer.html" %}
+{% endblock %}
