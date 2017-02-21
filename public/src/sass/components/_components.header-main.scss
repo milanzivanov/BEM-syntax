@@ -34,36 +34,3 @@
 	}
 
 
-
-/*------------------------------------*\
-    #NAV MAIN
-\*------------------------------------*/
-
-.nav-main {
-	float: right;
-
-	ul {
-
-	}
-}
-	.nav-main__list {
-		margin-left: 0;
-		margin-bottom: 0;
-		margin-right: 20px;
-	}
-
-	.nav-main__item {
-		display: inline-block;
-
-		a {
-			color: black;
-			display: block;
-			line-height: 85px;
-			height: 85px;
-			padding: 0 10px;
-
-			.header-main--blue & {
-				color: white;
-			}
-		}
-	}
